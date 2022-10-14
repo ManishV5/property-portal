@@ -7,10 +7,12 @@ import { Sell } from "./pages/Sell";
 import { SignIn } from "./pages/SignIn";
 import { SignUp } from "./pages/SignUp";
 import { Subscribe } from "./pages/Subscribe";
+import {Navbar} from "./components/Navbar"
 function App() {
   return (
     <div className="App">
       <Router>
+        <Navbar/>
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/buy" element={<Buy/>}/>
