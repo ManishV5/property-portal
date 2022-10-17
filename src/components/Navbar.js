@@ -1,6 +1,22 @@
 import logo from "../assets/logo.jpg"
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
+
+
+
 export const Navbar = () => {
+  let navigate = useNavigate()
+
+  const handleAdminSignIn = () => {
+    navigate('/adminlogin')
+  }
+
+  const handleSignIn = () => {
+    navigate('/signin')
+  }
+
+  const handleSignUp = () => {
+    navigate('/signup')
+  }
     return (
         <nav className="navbar navbar-expand-lg bg-light">
         <div className="container-fluid">
@@ -20,9 +36,9 @@ export const Navbar = () => {
                 <Link className="nav-link" to="/subscribe">Subscription</Link>
               </li>
             </ul>
-            <button className="btn btn-outline-danger">Admin</button>
-            <button className="btn btn-outline-success ms-2">Sign In</button>
-            <button className="btn btn-outline-success ms-2">Sign Up</button>
+            <button className="btn btn-outline-danger" onClick={handleAdminSignIn}>Admin</button>
+            <button className="btn btn-outline-success ms-2" onClick={handleSignIn}>Sign In</button>
+            <button className="btn btn-outline-success ms-2" onClick={handleSignUp}>Sign Up</button>
           </div>
         </div>
       </nav>
