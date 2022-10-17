@@ -8,11 +8,15 @@ import { SignIn } from "./pages/SignIn";
 import { SignUp } from "./pages/SignUp";
 import { Subscribe } from "./pages/Subscribe";
 import {Navbar} from "./components/Navbar";
+import {useState} from "react"
 function App() {
+  const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"))
+  const [username, setUsername] =  useState(localStorage.getItem("username"))
+
   return (
     <div className="App">
       <Router>
-        <Navbar/>
+        <Navbar isAuth={isAuth} setIsAuth={setIsAuth} username={username} setUsername={setUsername}/>
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/buy" element={<Buy/>}/>

@@ -1,9 +1,7 @@
 import logo from "../assets/logo.jpg"
 import {Link, useNavigate} from "react-router-dom"
 
-
-
-export const Navbar = () => {
+export const Navbar = (props) => {
   let navigate = useNavigate()
 
   const handleAdminSignIn = () => {
@@ -36,9 +34,16 @@ export const Navbar = () => {
                 <Link className="nav-link" to="/subscribe">Subscription</Link>
               </li>
             </ul>
-            <button className="btn btn-outline-danger" onClick={handleAdminSignIn}>Admin</button>
-            <button className="btn btn-outline-success ms-2" onClick={handleSignIn}>Sign In</button>
-            <button className="btn btn-outline-success ms-2" onClick={handleSignUp}>Sign Up</button>
+            {props.isAuth ? (
+              <button className="btn btn-outline-danger">Sign Out</button>
+            ) : (
+              <>
+                <button className="btn btn-outline-danger" onClick={handleAdminSignIn}>Admin</button>
+                <button className="btn btn-outline-success ms-2" onClick={handleSignIn}>Sign In</button>
+                <button className="btn btn-outline-success ms-2" onClick={handleSignUp}>Sign Up</button>
+              </>
+            )}
+  
           </div>
         </div>
       </nav>
