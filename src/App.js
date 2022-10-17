@@ -7,7 +7,8 @@ import { Sell } from "./pages/Sell";
 import { SignIn } from "./pages/SignIn";
 import { SignUp } from "./pages/SignUp";
 import { Subscribe } from "./pages/Subscribe";
-import {Navbar} from "./components/Navbar"
+import {Navbar} from "./components/Navbar";
+import {AboutBar} from "./components/Aboutbar";
 function App() {
   return (
     <div className="App">
