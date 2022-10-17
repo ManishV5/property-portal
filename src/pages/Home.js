@@ -5,7 +5,7 @@ import { AboutBar } from "../components/Aboutbar";
 export const Home = () => {
   const myStyle = {
     backgroundImage: `url(${backgroundImageHome})`,
-    height: "101vh",
+    height: "92vh",
     marginTop: "-70px",
     fontSize: "50px",
     backgroundSize: "cover",
