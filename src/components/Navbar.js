@@ -1,5 +1,7 @@
 import logo from "../assets/logo.jpg"
 import {Link, useNavigate, useLocation} from "react-router-dom"
+import { signOut } from "firebase/auth"
+import { auth } from "../firebase-config/config"
 
 export const Navbar = (props) => {
   const location = useLocation()
@@ -16,6 +18,15 @@ export const Navbar = (props) => {
   const handleSignUp = () => {
     navigate('/signup')
   }
+
+  const handleSignOut = () => {
+    signOut(auth).then(() => {
+      localStorage.clear()
+      props.setIsAuth(false)
+      navigate("/")
+    })
+  }
+
     return (
         <nav className="navbar navbar-expand-lg bg-light">
         <div className="container-fluid">
@@ -36,7 +47,7 @@ export const Navbar = (props) => {
               </li>
             </ul>
             {props.isAuth ? (
-              <button className="btn btn-outline-danger">Sign Out</button>
+              <button className="btn btn-outline-danger" onClick={handleSignOut}>Sign Out</button>
             ) : (
               <>
               {
