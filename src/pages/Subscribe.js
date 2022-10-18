@@ -47,7 +47,7 @@ export const Subscribe = () => {
                         <h5 class="card-title">Ultimate (Rs 499/Month)</h5>
                         <p class="card-text">Unlocks your potential.</p>
                         <ul>
-                            <li>No limits for either contancting seller or posting listings</li>
+                            <li>No limits for either contacting seller or posting listings</li>
                             <li>Dedicated 24 x 7 support line to resolve your issues</li>
                             <li>includes benefits of previous tier</li>
                         </ul>
