@@ -16,7 +16,8 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Navbar isAuth={isAuth} setIsAuth={setIsAuth} username={username} setUsername={setUsername}/>
+        <Navbar isAuth={isAuth} setIsAuth={setIsAuth} username={username} setUsername={setUsername}
+        />
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/buy" element={<Buy/>}/>

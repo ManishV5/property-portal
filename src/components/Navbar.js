@@ -1,7 +1,8 @@
 import logo from "../assets/logo.jpg"
-import {Link, useNavigate} from "react-router-dom"
+import {Link, useNavigate, useLocation} from "react-router-dom"
 
 export const Navbar = (props) => {
+  const location = useLocation()
   let navigate = useNavigate()
 
   const handleAdminSignIn = () => {
@@ -38,9 +39,20 @@ export const Navbar = (props) => {
               <button className="btn btn-outline-danger">Sign Out</button>
             ) : (
               <>
+              {
+                location.pathname !== "/adminlogin" && 
                 <button className="btn btn-outline-danger" onClick={handleAdminSignIn}>Admin</button>
+              }
+
+              {
+                location.pathname !== "/signin" &&
                 <button className="btn btn-outline-success ms-2" onClick={handleSignIn}>Sign In</button>
+              }
+
+              {
+                location.pathname !== "/signup" &&
                 <button className="btn btn-outline-success ms-2" onClick={handleSignUp}>Sign Up</button>
+              }
               </>
             )}
   
