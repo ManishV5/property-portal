@@ -1,8 +1,17 @@
 import smallImage from "../assets/small.jpg"
 import mediumImage from "../assets/medium.jpg"
 import largeImage from "../assets/large.jpg"
+import { useNavigate } from "react-router-dom"
+import { useEffect } from "react"
 
-export const Subscribe = () => {
+export const Subscribe = (props) => {
+    let navigate = useNavigate()
+    useEffect(() => {
+        if(!props.isAuth){
+            navigate('/signin')
+        }
+    }, [])
+
     return (
         <div className="container">
             <div class="row row-cols-1 row-cols-md-3 g-4">

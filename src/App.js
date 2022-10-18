@@ -21,12 +21,12 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/buy" element={<Buy/>}/>
-          <Route path="/sell" element={<Sell/>}/>
+          <Route path="/sell" element={<Sell isAuth={isAuth}/>}/>
           <Route path="/signin" element={<SignIn isAuth={isAuth} setIsAuth={setIsAuth} setUsername={setUsername}/>}/>
           <Route path="/signup" element={<SignUp/>}/>
           <Route path="/admin" element={<Admin/>}/>
           <Route path="/adminlogin" element={<AdminLogin/>}/>
-          <Route path="/subscribe" element={<Subscribe/>}/>
+          <Route path="/subscribe" element={<Subscribe isAuth={isAuth}/>}/>
         </Routes>
       </Router>
     </div>

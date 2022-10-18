@@ -1,4 +1,14 @@
-export const Sell = () => {
+import { useEffect } from "react"
+import { useNavigate } from "react-router-dom"
+
+export const Sell = (props) => {
+    let navigate = useNavigate()
+    useEffect(() => {
+        if(!props.isAuth){
+            navigate('/signin')
+        }
+    }, [])
+
     return (
         <div className="container d-flex justify-content-center col-8 mt-5">
             <div className="addNewListing">
