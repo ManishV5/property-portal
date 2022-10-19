@@ -9,6 +9,8 @@ import { SignUp } from "./pages/SignUp";
 import { Subscribe } from "./pages/Subscribe";
 import {Navbar} from "./components/Navbar";
 import {useState} from "react"
+import { Transaction } from "./pages/Transaction";
+
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"))
   const [username, setUsername] =  useState(localStorage.getItem("username"))
@@ -27,6 +29,7 @@ function App() {
           <Route path="/admin" element={<Admin/>}/>
           <Route path="/adminlogin" element={<AdminLogin/>}/>
           <Route path="/subscribe" element={<Subscribe isAuth={isAuth}/>}/>
+          <Route path="/transaction" element={<Transaction isAuth={isAuth}/>}/>
         </Routes>
       </Router>
     </div>
