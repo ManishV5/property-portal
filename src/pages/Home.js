@@ -1,6 +1,8 @@
 import React from "react";
 import backgroundImageHome from "../assets/backgroundImageHome.jpg";
 import { AboutBar } from "../components/Aboutbar";
+import { SearchBar } from "../components/SearchBar";
+import "../assets/css/style.css"
 
 export const Home = () => {
   const myStyle = {
@@ -14,6 +16,7 @@ export const Home = () => {
   return (
     <>
       <div class="container-float" style={myStyle} />
+      <SearchBar />
       <AboutBar />
     </>
   );
