@@ -1,0 +1,14 @@
+.search-box{
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.btn.btn-search{
+    border-radius: 8;
+    height: 50px;
+    background: #03a3b2;
+    color: rgb(3, 3, 3);
+}
+
