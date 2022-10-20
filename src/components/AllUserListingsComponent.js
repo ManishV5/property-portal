@@ -1,27 +1,34 @@
 import React from 'react'
 import { useEffect, useState } from "react"
 import { db } from '../firebase-config/config'
-import { collection, getDocs } from "firebase/firestore"
+import { collection, getDocs, doc, deleteDoc } from "firebase/firestore"
 import {auth} from "../firebase-config/config"
+import { useNavigate } from "react-router-dom"
 
 function AllUserListingsComponent(props) {
     const [allListings, setAllListings] = useState([])
+    const [listingSize, setListingSize] = useState(0)
+    let navigate = useNavigate()
 
     const listingsCollectionRef = collection(db, 'listings')
 
     useEffect(() => {
         const getListings = async () => {
             const data = await getDocs(listingsCollectionRef)
-            let listings = []
-
-            data.docs.forEach((doc) => {
-                listings.push(doc.data())
-            })
-            setAllListings(listings)
+            setAllListings(data.docs.map((doc) => ({...doc.data(), id: doc.id}))).then(
+                setListingSize(allListings.length)
+            )
         }
         getListings()
-    }, [])
+    }, [listingSize])
 
+    const handleDeleteListing = async (id) =>{
+        const listing = doc(db, "listings", id)
+        await deleteDoc(listing).then(() =>{
+            setListingSize(listingSize - 1)
+            navigate('/listings')
+        })
+    }
   return (
     <div className="container mt-1">
           <table class="table">
@@ -50,7 +57,7 @@ function AllUserListingsComponent(props) {
                       <td>{listing['negotiable']}</td>
                       <td>{listing['timestamp']}</td>
                       <td>{listing['sold-out']}</td>
-                      <td><button className='btn btn-danger'>Delete</button></td>
+                      <td><button className='btn btn-danger' onClick={() => handleDeleteListing(listing.id)}>Delete</button></td>
                     </tr>)
                 })
               }
