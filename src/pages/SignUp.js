@@ -42,6 +42,7 @@ export const SignUp = () => {
                     </div> */}
                     <div class="mt-3 text-center">
                         <button  class="btn btn-outline-success me-3" onClick={handleSignup}>Sign Up</button>
+
                     </div>
                     <div className="mt-3">
                        Already have an account ? Sign In <Link to="/signin">here</Link>

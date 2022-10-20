@@ -47,7 +47,11 @@ export const Navbar = (props) => {
               </li>
             </ul>
             {props.isAuth ? (
+              <>
+              <div className="me-2"> Hello, {props.username} !</div>
               <button className="btn btn-outline-danger" onClick={handleSignOut}>Sign Out</button>
+            </>
+            
             ) : (
               <>
               {
