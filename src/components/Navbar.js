@@ -66,13 +66,13 @@ export const Navbar = (props) => {
           {props.isAuth ? (
             <>
               <div className="me-2" onClick={toggleMenu}> Hello, {props.username} !</div>
-              <div className="sub-menu-wrap" id="subMenu">
+              {/* <div className="sub-menu-wrap" id="subMenu">
                 <div className="sub-menu">
                   <a href="#" className="sub-menu-link">
                     <p onClick={handleTransaction}>My transactions</p>
                   </a>
                 </div>
-              </div>
+              </div> */}
               <button
                 className="btn btn-outline-danger"
                 onClick={handleSignOut}
