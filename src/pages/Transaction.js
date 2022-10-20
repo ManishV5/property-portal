@@ -1,5 +1,14 @@
+import { useNavigate } from "react-router-dom"
+import { useEffect } from "react"
 
-export const Transaction = () => {
+export const Transaction = (props) => {
+    let navigate = useNavigate()
+    useEffect(() => {
+        if(!props.isAuth){
+            navigate('/signin')
+        }
+    }, [])
+
     return (
       <div className="container mt-5">
         {/* <h1 style={{ textAlign: "center" }}>My Transaction(s)</h1> */}
