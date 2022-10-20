@@ -12,3 +12,18 @@
     color: rgb(0, 0, 0);
 }
 
+
+.sub-menu-link{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #525252;
+    margin: 0px 0;
+    top: 50%;
+}
+
+.sub-menu-link p{
+    width: 80%;
+}
+
+
