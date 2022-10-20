@@ -80,25 +80,13 @@ export const Navbar = (props) => {
                 Sign Out
               </button>
             </>
-          ) : (
-            <>
-              {location.pathname !== "/adminlogin" && (
-                <button
-                  className="btn btn-outline-danger"
-                  onClick={handleAdminSignIn}
-                >
-                  Admin
-                </button>
-              )}
-
-              {location.pathname !== "/signin" && (
-                <button
-                  className="btn btn-outline-success ms-2"
-                  onClick={handleSignIn}
-                >
-                  Sign In
-                </button>
-              )}
+            
+            ) : (
+              <>
+              {
+                location.pathname !== "/signin" &&
+                <button className="btn btn-outline-success ms-2" onClick={handleSignIn}>Sign In</button>
+              }
 
               {location.pathname !== "/signup" && (
                 <button
