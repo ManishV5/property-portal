@@ -36,6 +36,10 @@ export const Navbar = (props) => {
     navigate("/transaction");
   };
 
+  const handleListings = () => {
+    navigate("/listings");
+  };
+
   return (
     <nav className="navbar navbar-expand-lg bg-light">
       <div className="container-fluid">
@@ -79,9 +83,14 @@ export const Navbar = (props) => {
                 </a>
                 <ul class="dropdown-menu" style={{paddingLeft:"1.1rem", marginTop: "1.4rem"}}>
                   <li>
-                  <a href="" className="sub-menu-link" style={{textAlign: "center"}}>
-                    <p onClick={handleTransaction}>My transactions</p>
-                  </a>
+                    <a href="" className="sub-menu-link">
+                      <p onClick={handleTransaction}>My transactions</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" className="sub-menu-link">
+                      <p onClick={handleListings}>My listings</p>
+                    </a>
                   </li>
                 </ul>
               </li>

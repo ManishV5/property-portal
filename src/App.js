@@ -1,6 +1,4 @@
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
-import { Admin } from "./pages/Admin";
-import { AdminLogin } from "./pages/AdminLogin";
 import { Buy } from "./pages/Buy";
 import { Home } from "./pages/Home";
 import { Sell } from "./pages/Sell";
@@ -10,6 +8,7 @@ import { Subscribe } from "./pages/Subscribe";
 import {Navbar} from "./components/Navbar";
 import {useState} from "react"
 import { Transaction } from "./pages/Transaction";
+import { Listings } from "./pages/Listings";
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"))
@@ -29,6 +28,7 @@ function App() {
           <Route path="/signup" element={<SignUp/>}/>
           <Route path="/subscribe" element={<Subscribe isAuth={isAuth}/>}/>
           <Route path="/transaction" element={<Transaction isAuth={isAuth}/>}/>
+          <Route path="/listings" element={<Listings isAuth={isAuth}/>}/>
         </Routes>
       </Router>
     </div>

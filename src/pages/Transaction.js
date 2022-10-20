@@ -28,8 +28,8 @@ export const Transaction = (props) => {
     
     return (
       
-      <div className="container mt-5">
-        <p></p>
+      <div className="container mt-1">
+        <p className="display-6 text-center">Your transactions</p>
           <table class="table">
             <thead>
               <tr>

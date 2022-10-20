@@ -58,122 +58,54 @@ export const Sell = (props) => {
 
   return (
     <>
-      <div className="container d-flex justi
-        fy-content-center col-3  mt-5">
-        <ul class="nav nav-pills" >
-          <li class="nav-item" >
-            <a
-              class={`nav-link  ${flag ? "active1" : ""}`} 
-              onClick={() => {
-                setFlag(true);
-              }}
-              aria-current="page"
-              href="#"
-            >
-              Add New Listing
-            </a>
-          </li>
-          <li class="nav-item">
-            <a
-              class={`nav-link ${!flag ? "active1" : ""} `}
-              onClick={() => {
-                setFlag(false);
-              }}
-              href="#"
-            >
-              My Listings
-            </a>
-          </li>
-        </ul>
-      </div>
-      {flag ? (
-        <div
-          className="container d-flex justi
-        fy-content-center col-8 mt-5"
-        >
-          <div className="addNewListing">
-            <div class="text-center">
-              <label className="fs-4 mb-2 ">Add new listing</label>
-            </div>
-            <div className="input-group mb-3">
-              <span className="input-group-text">Listing</span>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Enter listing name"
-                ref={listingNameRef}
-              />
-              <span className="input-group-text">Location</span>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Enter location"
-                ref={locationRef}
-              />
-            </div>
+        <div className="container d-flex justify-content-center col-8 mt-5">
+           <div className="addNewListing">
+                <div class="text-center mb-3">
+                    <label className="display-5">New Listing</label>
+                </div>
+                <div className="input-group mb-3">
+                    <span className="input-group-text">Listing</span>
+                    <input type="text" className="form-control" placeholder="Enter listing name" ref={listingNameRef}/>
+                    <span className="input-group-text">Location</span>
+                    <input type="text" className="form-control" placeholder="Enter location" ref={locationRef}/>
+                </div>
 
-            <div className="input-group mb-3">
-              <span className="input-group-text">Price (in Rs)</span>
-              <input type="number" className="form-control" ref={priceRef} />
-              <span className="input-group-text">Size (in sq.)</span>
-              <input type="number" className="form-control" ref={sizeRef} />
-              <div class="form-check ms-3">
-                <label class="form-check-label" for="flexCheckDefault">
-                  Negotiable
-                </label>
-                <select class="form-select" ref={negotaibleRef}>
-                  <option selected value="false">
-                    false
-                  </option>
-                  <option value="true">true</option>
-                </select>
-              </div>
-              <div class="form-check ms-3">
-                <label class="form-check-label" for="flexCheckDefault">
-                  Financing
-                </label>
-                <select class="form-select" ref={financingRef}>
-                  <option selected value="false">
-                    false
-                  </option>
-                  <option value="true">true</option>
-                </select>
-              </div>
-            </div>
+                <div className="input-group mb-3">
+                    <span className="input-group-text">Price (in Rs)</span>
+                    <input type="number" className="form-control" ref={priceRef}/>
+                    <span className="input-group-text">Size (in sq.)</span>
+                    <input type="number" className="form-control" ref={sizeRef}/>
+                    <div class="form-check ms-3">
+                        <label class="form-check-label" for="flexCheckDefault">Negotiable</label>
+                        <select class="form-select" ref={negotaibleRef}>
+                            <option selected value="false">false</option>
+                            <option value="true">true</option>
+                        </select>
+                    </div>
+                    <div class="form-check ms-3">
+                        <label class="form-check-label" for="flexCheckDefault">Financing</label>
+                        <select class="form-select" ref={financingRef}>
+                            <option selected value="false">false</option>
+                            <option value="true">true</option>
+                        </select>
+                    </div>
+                </div>
 
-            <div className="input-group mb-3">
-              <span className="input-group-text">Description</span>
-              <textarea
-                className="form-control"
-                aria-label="With textarea"
-                ref={descriptionRef}
-              ></textarea>
-            </div>
 
-            <div className="input-group mb-3">
-              <label class="input-group-text">Upload Images</label>
-              <input
-                type="file"
-                multiple
-                class="form-control"
-                onChange={(e) => {
-                  setImages(e.target.files);
-                }}
-              />
+                <div className="input-group mb-3">
+                    <span className="input-group-text">Description</span>
+                    <textarea className="form-control" aria-label="With textarea" ref={descriptionRef}></textarea>
+                </div>
+
+                <div className="input-group mb-3">
+                    <label class="input-group-text">Upload Images</label>
+                    <input type="file" multiple class="form-control" onChange={(e) => {setImages(e.target.files)}}/>
+                </div>
+                <div class="mt-3 text-center">
+                    <button class="btn btn-outline-primary me-3" onClick={handleAddListing}>Add Listing</button>
+                </div>
             </div>
-            <div class="mt-3 text-center">
-              <button
-                class="btn btn-outline-primary me-3"
-                onClick={handleAddListing}
-              >
-                Add Listing
-              </button>
-            </div>
-          </div>
         </div>
-      ) : (
-        <div>My listing</div>
-      )}
     </>
   );
 };
