@@ -6,6 +6,7 @@ import { db, auth } from "../firebase-config/config";
 import { storage } from "../firebase-config/config";
 import { ref, uploadBytes } from "firebase/storage";
 import "../assets/css/style.css"; 
+import AllUserListingsComponent from "../components/AllUserListingsComponent";
 
 export const Listings = (props) => {
     const [images, setImages] = useState(null);
@@ -83,7 +84,7 @@ export const Listings = (props) => {
             </ul>
           </div>
           {flag ? (
-            <div>All my listings</div>
+            <div><AllUserListingsComponent/></div>
           ) : (
             <div
               className="container d-flex justi

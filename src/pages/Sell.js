@@ -42,6 +42,8 @@ export const Sell = (props) => {
       financing: financingRef.current.value,
       description: descriptionRef.current.value,
       imageRef: `${auth.currentUser.uid}_${listingNameRef.current.value}`,
+      timestamp: new Date().toLocaleString(),
+      "sold-out": "false"
     }).then(() => {
       for (let i = 0; i < images.length; i++) {
         uploadBytes(
