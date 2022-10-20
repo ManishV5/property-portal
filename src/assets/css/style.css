@@ -12,19 +12,6 @@
     color: rgb(0, 0, 0);
 }
 
-/* .sub-menu-wrap{
-    position: absolute;
-    top: 100%;
-    right: 0%;
-    width: 290px;
-    max-height: 0px;
-    overflow: hidden;
-    transition: max-height 0.5s;
-}
-
-.sub-menu-wrap.open-menu{
-    max-height: 400px;
-}
 
 .sub-menu-link{
     display: flex;
@@ -32,18 +19,11 @@
     text-decoration: none;
     color: #525252;
     margin: 0px 0;
+    top: 50%;
 }
 
 .sub-menu-link p{
     width: 80%;
 }
 
-.sub-menu{
-    background: #fff;
-    padding: 20px;
-    margin: 10px;
-}
 
-.sub-menu-link:hover p{
-    font-weight: 600;
-} */

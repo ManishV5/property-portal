@@ -27,14 +27,14 @@ export const Navbar = (props) => {
     });
   };
 
-  const toggleMenu = () =>{
-    let subMenu = document.getElementById("subMenu")
-    subMenu.classList.toggle("open-menu")
-  }
+  const toggleMenu = () => {
+    let subMenu = document.getElementById("subMenu");
+    subMenu.classList.toggle("open-menu");
+  };
 
   const handleTransaction = () => {
-    navigate("/transaction")
-  }
+    navigate("/transaction");
+  };
 
   return (
     <nav className="navbar navbar-expand-lg bg-light">
@@ -65,28 +65,41 @@ export const Navbar = (props) => {
           </ul>
           {props.isAuth ? (
             <>
-              <div className="me-2" onClick={toggleMenu}> Hello, {props.username} !</div>
-              {/* <div className="sub-menu-wrap" id="subMenu">
-                <div className="sub-menu">
-                  <a href="#" className="sub-menu-link">
+            <ul>
+              <li class="nav-item dropdown" style={{listStyleType: "none", marginRight: "1rem", marginTop: "10px"}}>
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                Hello, {props.username} !
+
+                </a>
+                <ul class="dropdown-menu" style={{paddingLeft:"1.1rem", marginTop: "1.4rem"}}>
+                  <li>
+                  <a href="#" className="sub-menu-link" style={{textAlign: "center"}}>
                     <p onClick={handleTransaction}>My transactions</p>
                   </a>
-                </div>
-              </div> */}
-              <button
-                className="btn btn-outline-danger"
-                onClick={handleSignOut}
-              >
+                  </li>
+                </ul>
+              </li>
+              </ul>
+              <button className="btn btn-outline-danger" onClick={handleSignOut}>
                 Sign Out
               </button>
             </>
-            
-            ) : (
-              <>
-              {
-                location.pathname !== "/signin" &&
-                <button className="btn btn-outline-success ms-2" onClick={handleSignIn}>Sign In</button>
-              }
+          ) : (
+            <>
+              {location.pathname !== "/signin" && (
+                <button
+                  className="btn btn-outline-success ms-2"
+                  onClick={handleSignIn}
+                >
+                  Sign In
+                </button>
+              )}
 
               {location.pathname !== "/signup" && (
                 <button
