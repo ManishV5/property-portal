@@ -24,7 +24,7 @@ function App() {
           <Route path="/" element={<Home/>}/>
           <Route path="/buy" element={<Buy username={username}/>}/>
           <Route path="/buy/:location" element={<Buy username={username}/>}/>
-          <Route path="/sell" element={<Sell isAuth={isAuth}/>}/>
+          <Route path="/sell" element={<Sell isAuth={isAuth} username={username}/>}/>
           <Route path="/signin" element={<SignIn isAuth={isAuth} setIsAuth={setIsAuth} setUsername={setUsername}/>}/>
           <Route path="/signup" element={<SignUp/>}/>
           <Route path="/subscribe" element={<Subscribe isAuth={isAuth}/>}/>

@@ -13,6 +13,7 @@ export const SignIn = (props) => {
             localStorage.setItem("isAuth", true)
             localStorage.setItem('username', auth.currentUser.displayName)
             props.setIsAuth(true)
+            props.setUsername(auth.currentUser.displayName)
             navigate("/")
         })
     }

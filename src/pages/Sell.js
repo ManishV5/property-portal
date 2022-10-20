@@ -27,6 +27,10 @@ export const Sell = (props) => {
 
     const handleAddListing = async () => {
         await addDoc(listingCollectionRef, {
+            "seller": {
+                "sellerID" : auth.currentUser.uid,
+                "seller-name" : `${props.username}`
+            },
             "listing-name"  : listingNameRef.current.value,
             "location" : locationRef.current.value,
             "price" : priceRef.current.value,
