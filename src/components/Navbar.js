@@ -79,7 +79,7 @@ export const Navbar = (props) => {
                 </a>
                 <ul class="dropdown-menu" style={{paddingLeft:"1.1rem", marginTop: "1.4rem"}}>
                   <li>
-                  <a href="#" className="sub-menu-link" style={{textAlign: "center"}}>
+                  <a href="" className="sub-menu-link" style={{textAlign: "center"}}>
                     <p onClick={handleTransaction}>My transactions</p>
                   </a>
                   </li>

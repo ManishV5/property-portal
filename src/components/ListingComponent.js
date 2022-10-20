@@ -2,10 +2,12 @@ import { useEffect, useState } from "react"
 import {  storage, auth } from '../firebase-config/config'
 import { ref, listAll, getDownloadURL } from "firebase/storage"
 import Modal from "./Modal"
+import { useNavigate } from "react-router-dom"
 
 export const ListingComponent = (props) => {
     const [imagesUrl, setImagesUrl] = useState([])
     const [isModelOpen, setModal] = useState(false);
+    const navigate = useNavigate()
      
     useEffect(() => {
          const getImages = async () => {
@@ -59,7 +61,8 @@ export const ListingComponent = (props) => {
                          {props.listing['financing'] === "true" && <li>Financing</li>}
                      </ul>
                     <div class="mt-3 text-center">
-                        {auth.currentUser.uid !== props.listing['seller']['sellerID'] && <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target={`#${props.listing['listing-name']}_modal`} onClick={() => {setModal(true)}}>Buy Now</button>}
+                        {props.isAuth && auth.currentUser.uid !== props.listing['seller']['sellerID'] && <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target={`#${props.listing['listing-name']}_modal`} onClick={() => {setModal(true)}}>Buy Now</button>}
+                        {!props.isAuth && <button type="button" class="btn btn-danger"  onClick={() => navigate('/signin')}>Buy Now</button>}
                         {isModelOpen && <Modal setModal={setModal} listing={props.listing}/>}
                     </div>
                  </div>

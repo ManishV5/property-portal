@@ -36,13 +36,13 @@ export const Buy = (props) => {
                     allListings.filter(item => item['location'] === location['location']).map((listing, key) => {
                         return (<div key={key}>
                             <p class="h3 text-center">Properties at {location['location']}</p>
-                            <ListingComponent listing={listing} isSearch={isSearch} location={location['location']}/>
+                            <ListingComponent listing={listing} isSearch={isSearch} isAuth={props.isAuth} location={location['location']}/>
                         </div>)
                     })
                 }
             </>) : (<>
                 {allListings.map((listing, key) => {
-                    return (<div key={key}><ListingComponent listing={listing}/></div>)
+                    return (<div key={key}><ListingComponent isAuth={props.isAuth} listing={listing}/></div>)
                 })}
             </>)}
         </div>
