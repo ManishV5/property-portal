@@ -23,6 +23,7 @@ export const Navbar = (props) => {
     signOut(auth).then(() => {
       localStorage.clear();
       props.setIsAuth(false);
+      props.setIsASub(false);
       navigate("/");
     });
   };

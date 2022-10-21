@@ -18,6 +18,10 @@ export const Sell = (props) => {
     if (!props.isAuth) {
       navigate("/signin");
     }
+
+    if(!props.isASub){
+      navigate('/subscribe');
+    }
   }, []);
 
   let listingNameRef = React.createRef();
