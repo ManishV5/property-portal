@@ -137,7 +137,7 @@ function Update(props) {
                     class="btn btn-outline-warning me-3"
                     onClick={handleUpdate}
                   >
-                    Add Listing
+                    Update
                   </button>
                 </div>
               </div>
