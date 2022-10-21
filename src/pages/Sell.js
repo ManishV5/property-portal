@@ -63,7 +63,7 @@ export const Sell = (props) => {
         <div className="container d-flex justify-content-center col-8 mt-5">
            <div className="addNewListing">
                 <div class="text-center mb-3">
-                    <label className="display-5">New Listing</label>
+                    <label className="display-5 mb-3"> Add New Listing</label>
                 </div>
                 <div className="input-group mb-3">
                     <span className="input-group-text">Listing</span>
