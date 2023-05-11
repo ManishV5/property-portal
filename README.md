@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Use it here - [https://property-portal-eb22e.web.app/](https://property-portal-eb22e.web.app/)
+Use it here - [https://property-portal-e469f.web.app/](https://property-portal-e469f.web.app/)
 
 ## Available Scripts
 
